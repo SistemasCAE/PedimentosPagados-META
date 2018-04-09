@@ -46,7 +46,7 @@ var fn = {
 			$("#aduanaNp").text('Aduana: Queretaro');
 			$("#aduanaFp").text('Aduana: Queretaro');
 			window.localStorage.setItem("aduana", aduana);
-			fn.enviaSesion("compruebaSesion47.php",usuario,password)
+			n.enviaSesion("compruebaSesion.php",usuario,password);
 		}
 	},
 	enviaSesion: function(archivoSesion,usuario,password){
@@ -55,7 +55,7 @@ var fn = {
 		}else{*/
 			$.ajax({
 				method: "POST",
-				url: "http://enlinea.cae3076.com/AppConsultaPedimentos/"+archivoSesion,
+				url: "http://enlinea.laser-oe.com.mx/AppConsultaPedimentos/"+archivoSesion,
 				data: { 
 					usu: usuario,
 					pass: password
@@ -119,16 +119,7 @@ var fn = {
 			$('#resultado').html("");
 			return;
 		}
-		
-		if(window.localStorage.getItem("aduana")=='puebla')
-		{
-			var archivoConsulta = 'http://enlinea.cae3076.com/AppConsultaPedimentos/buscaPedimento.php';
-		}
-		else{
-			var archivoConsulta = 'http://enlinea.cae3076.com/AppConsultaPedimentos/buscaPedimento47.php';
-		}
-		
-		
+		var archivoConsulta = 'http://enlinea.laser-oe.com.mx/AppConsultaPedimentos/buscaPedimento.php';
 		
 		////////////////////////////////////////////////////////////// Envio AJAX//////////////////////////////////////////////////////////////////
 		$.ajax({
@@ -164,7 +155,8 @@ var fn = {
 	abrePDF : function(archivo,ruta){
 		var vector = ruta.split("/");
 		var nuevaRuta = vector[5]+"/"+vector[6]+"/"+vector[7]+"/"+vector[8]+"/"+vector[9]+"/"+archivo;
-		var UrlFile = 'http://enlinea.cae3076.com/Portal_CAE/'+nuevaRuta;
+		var UrlFile = 'http://enlinea.laser-oe.com.mx/'+nuevaRuta;
+		console.log(UrlFile);
 		var ref = cordova.InAppBrowser.open('https://docs.google.com/viewer?url='+UrlFile+'&embedded=true', '_blank', 'location=yes');
 		window.open = cordova.InAppBrowser.open;
 	},
@@ -179,14 +171,8 @@ var fn = {
 		var operacion= $("#combo").val();
 		var fechaFin= $("#fechaFin").val();
 		
+		var archivoConsulta = 'http://enlinea.laser-oe.com.mx/AppConsultaPedimentos/buscaPedimento.php';
 		
-		if(window.localStorage.getItem("aduana")=='puebla')
-		{
-			var archivoConsulta = 'http://enlinea.cae3076.com/AppConsultaPedimentos/buscaPedimento.php';
-		}
-		else{
-			var archivoConsulta = 'http://enlinea.cae3076.com/AppConsultaPedimentos/buscaPedimento47.php';
-		}
 		
 		
 		try{
@@ -260,13 +246,7 @@ var fn = {
 		console.log(noPedimento);
 		var empresa_rfc = window.localStorage.getItem("nombreUsuario");
 		
-		if(window.localStorage.getItem("aduana")=='puebla')
-		{
-			var archivoConsulta = 'http://enlinea.cae3076.com/AppConsultaPedimentos/buscaPedimento.php';
-		}
-		else{
-			var archivoConsulta = 'http://enlinea.cae3076.com/AppConsultaPedimentos/buscaPedimento47.php';
-		}
+		var archivoConsulta = 'http://enlinea.laser-oe.com.mx/AppConsultaPedimentos/buscaPedimento.php';
 		
 		////////////////////////////////////////////////////////////// Envio AJAX//////////////////////////////////////////////////////////////////
 		$.ajax({
