@@ -38,14 +38,14 @@ var fn = {
 		{
 			$("#aduanaNp").text('Aduana: Puebla');
 			$("#aduanaFp").text('Aduana: Puebla');
-			window.localStorage.setItem("aduana", aduana);
+			window.localStorage.setItem("aduanaMETA", aduana);
 			fn.enviaSesion("compruebaSesion.php",usuario,password);
 		}
 		else
 		{
 			$("#aduanaNp").text('Aduana: Queretaro');
 			$("#aduanaFp").text('Aduana: Queretaro');
-			window.localStorage.setItem("aduana", aduana);
+			window.localStorage.setItem("aduanaMETA", aduana);
 			n.enviaSesion("compruebaSesion.php",usuario,password);
 		}
 	},
@@ -62,7 +62,7 @@ var fn = {
 				}
 			}).done(function(mensaje){
 				if(mensaje != "0"){
-					window.localStorage.setItem("nombreUsuario", usuario);
+					window.localStorage.setItem("nombreUsuarioMETA", usuario);
 					window.location.href="#inicio";
 				}else{
 					window.plugins.toast.show("Usuario/Contraseña invalido(s)", 'long', 'center');
@@ -74,8 +74,8 @@ var fn = {
 	},
 	
 	cierraSesion: function(){
-		window.localStorage.removeItem("nombreUsuario");
-		window.localStorage.removeItem("aduana");
+		window.localStorage.removeItem("nombreUsuarioMETA");
+		window.localStorage.removeItem("aduanaMETA");
 		$('#noPedimento').val('')
 		$('#fechaInicio').val('');
 		$('#fechaFin').val('');
@@ -86,9 +86,9 @@ var fn = {
 	},
 	
 	compruebaSesion: function(){
-		if(window.localStorage.getItem("nombreUsuario") != null){
-			if(window.localStorage.getItem("aduana") != null){
-				if(window.localStorage.getItem("aduana")=='puebla')
+		if(window.localStorage.getItem("nombreUsuarioMETA") != null){
+			if(window.localStorage.getItem("aduanaMETA") != null){
+				if(window.localStorage.getItem("aduanaMETA")=='puebla')
 				{
 					$("#aduanaNp").text('Aduana: Puebla');
 					$("#aduanaFp").text('Aduana: Puebla');
@@ -108,7 +108,7 @@ var fn = {
 			window.plugins.toast.show("No existe conexión a internet, revisela e intente de nuevo", 'long', 'center');
 		}else{*/
 		$('#resultado').html("Cargando...");
-		var empresa_rfc = window.localStorage.getItem("nombreUsuario");
+		var empresa_rfc = window.localStorage.getItem("nombreUsuarioMETA");
 		var noPedimento= $("#noPedimento").val();
 		try{
 			if(noPedimento === ""){
@@ -166,7 +166,7 @@ var fn = {
 			window.plugins.toast.show("No existe conexión a internet, revisela e intente de nuevo", 'long', 'center');
 		}else{*/	
 		$('#resultado').html("Cargando...");
-		var empresa_rfc = window.localStorage.getItem("nombreUsuario");
+		var empresa_rfc = window.localStorage.getItem("nombreUsuarioMETA");
 		var fechaInicio= $("#fechaInicio").val();
 		var operacion= $("#combo").val();
 		var fechaFin= $("#fechaFin").val();
@@ -244,7 +244,7 @@ var fn = {
 			window.plugins.toast.show("No existe conexión a internet, revisela e intente de nuevo", 'long', 'center');
 		}else{*/	
 		console.log(noPedimento);
-		var empresa_rfc = window.localStorage.getItem("nombreUsuario");
+		var empresa_rfc = window.localStorage.getItem("nombreUsuarioMETA");
 		
 		var archivoConsulta = 'http://enlinea.laser-oe.com.mx/AppConsultaPedimentos/buscaPedimento.php';
 		
