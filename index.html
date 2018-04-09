@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Pedimentos Pagados</title>
+		<!--<meta name="viewport" content="width=device-width, user-scalable=no">
+		<meta name="viewport" content="width=300, initial-scale=1">
+		<meta name="viewport" content="initial-scale=1, maximum-scale=1">-->
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" type="text/css" href="css/jquery.mobile.icons-1.4.5.min.css">
+        <link rel="stylesheet" type="text/css" href="css/jquery.mobile.inline-png-1.4.5.min.css">
+        <link rel="stylesheet" type="text/css" href="css/jquery.mobile-1.4.5.min.css">
+        <link rel="stylesheet" type="text/css" href="css/estilos.css">
+	</head>
+	<body>
+		
+		<!------------------------------------------------------------------------------------------------------->
+		<!---------------------------------------PAGINA DE INICIO DE SESION-------------------------------------->
+		<!------------------------------------------------------------------------------------------------------->
+		
+		<section id="paginaInicio" data-role="page"  data-content-theme="a">
+			<div data-role="header" data-theme="b">
+				<h1>Bienvenido</h1>
+			</div>
+			<div data-role="content">
+				<div class="loginBody">
+					<h1>Log in</h1>
+					<input type="text" placeholder="Usuario" id="usuario">
+					<input type="password" placeholder="Contraseña" id="password">
+					<br>
+					<center>
+						<fieldset data-role="controlgroup" data-type="horizontal">
+							<legend for="select1">Aduana:</legend>
+							<select name="aduana" id="aduana">
+								<option value="puebla">Puebla</option>
+								<option value="queretaro">Queretaro</option>
+							</select>
+						</fieldset>
+					</center>
+					<br>
+					<button data-icon="css/images/icons-png/carat-r-black.png" data-iconpos="right" id="botonAcceder">Acceder</button>
+				</div>
+			</div>
+			<div data-role="footer" data-position="fixed" data-theme="b">
+				<h1>Copyrigth</h1>
+			</div>
+		</section>
+		
+		<!--------------------------------------------------------------------------------------------------------->
+		<!---------------------------------------PAGINA PRINCIPAL (CONSULTAS)-------------------------------------->
+		<!--------------------------------------------------------------------------------------------------------->
+		
+		<section id="inicio" data-role="page" data-content-theme="a" data-fullscreen="true">
+			<div data-role="header" data-theme="b">
+				<a href="" data-role="button" data-icon="delete" id="cierraSesion">Cerrar</a>
+				<h1>Consulta</h1>
+			</div>
+			<div data-role="content">
+				<div data-role="tabs">
+					<div data-role="navbar" data-theme="a">
+						<ul>
+							<li>
+								<a id="linkConsultaNoPedimento" href="#contenido1">
+									No. de Pedimento
+								</a>
+							</li>
+							<li>
+								<a id="linkConsultaFechaPago" href="#contenido2">
+									Fecha de Pago
+								</a>
+							</li>
+						</ul>
+					</div>
+					<br><br>
+					<center>
+						<div id="contenido1">
+							<strong><span id="aduanaNp"></span></strong>
+							<br><br>
+							<h1>Pedimento</h1>
+							<input type="text" id="noPedimento">
+							<br>
+							<button id="botonConsultarPedimento">Consultar</button>
+						</div>
+					</center>
+					<div id="contenido2">
+						<center>
+							<strong><span id="aduanaFp"></span></strong>
+							<br><br>
+							<h1>Pedimentos por Fecha de Pago</h1>
+							<input type="date" data-role="date" id="fechaInicio" class="hasDatepicker">
+							<br>
+							<input type="date" data-role="date" id="fechaFin" class="hasDatepicker">
+							<br>
+							<fieldset>
+								<select name="combo" id="combo">
+									<option value="0">IMP / EXP</option>
+									<option value="1">IMPORTACION</option>
+									<option value="2">EXPORTACION</option>
+								</select>
+							</fieldset>
+							<br>
+							<button id="botonConsultarFecha">Consultar</button>
+						</center>
+					</div>
+					<br>
+					<div id="popup" data-role="popup">
+					</div>
+					<br>
+					<div id="resultado">
+						
+					</div>
+				</div>
+			</div>
+			<div data-role="footer" data-position="fixed" data-theme="b">
+				<h1>Copyrigth</h1>
+			</div>
+		</section>
+		
+		<script type="text/javascript" charset="utf-8" src="cordova.js"></script>
+		<script type="text/javascript" src="js/jquery-1.12.4.min.js"></script>
+		<script type="text/javascript" src="js/jquery.mobile-1.4.5.min.js"></script>
+		<script type="text/javascript" src="js/API/networkInformation.js"></script>
+		<script type="text/javascript" src="js/actions.js"></script>
+	</body>	
+</html>
