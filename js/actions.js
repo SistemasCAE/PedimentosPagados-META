@@ -109,6 +109,7 @@ var fn = {
 		}else{*/
 		$('#resultado').html("Cargando...");
 		var empresa_rfc = window.localStorage.getItem("nombreUsuarioMETA");
+		var aduana_consulta = window.localStorage.getItem("aduanaMETA");
 		var noPedimento= $("#noPedimento").val();
 		try{
 			if(noPedimento === ""){
@@ -128,7 +129,8 @@ var fn = {
 				data: { 
 					opcion: 1,
 					noPedimento: noPedimento,
-					rfc : empresa_rfc
+					rfc : empresa_rfc,
+					aduana_consulta : aduana_consulta
 				},
 				dataType: "json"
 			}).done(function(data, textStatus, jqXHR){
@@ -170,6 +172,7 @@ var fn = {
 		var fechaInicio= $("#fechaInicio").val();
 		var operacion= $("#combo").val();
 		var fechaFin= $("#fechaFin").val();
+		var aduana_consulta = window.localStorage.getItem("aduanaMETA");
 		
 		var archivoConsulta = 'http://enlinea.laser-oe.com.mx/AppConsultaPedimentos/buscaPedimento.php';
 		
@@ -195,7 +198,8 @@ var fn = {
 					fechaInicio: fechaInicio,
 					fechaFin: fechaFin,
 					rfc : empresa_rfc,
-					operacion : operacion
+					operacion : operacion,
+					aduana_consulta : aduana_consulta
 				},
 				dataType: "json"
 			}).done(function(data, textStatus, jqXHR){
@@ -245,7 +249,7 @@ var fn = {
 		}else{*/	
 		console.log(noPedimento);
 		var empresa_rfc = window.localStorage.getItem("nombreUsuarioMETA");
-		
+		var aduana_consulta = window.localStorage.getItem("aduanaMETA");
 		var archivoConsulta = 'http://enlinea.laser-oe.com.mx/AppConsultaPedimentos/buscaPedimento.php';
 		
 		////////////////////////////////////////////////////////////// Envio AJAX//////////////////////////////////////////////////////////////////
@@ -255,7 +259,8 @@ var fn = {
 				data: { 
 					opcion: 1,
 					noPedimento: noPedimento,
-					rfc : empresa_rfc
+					rfc : empresa_rfc,
+					aduana_consulta : aduana_consulta
 				},
 				dataType: "json"
 			}).done(function(data, textStatus, jqXHR){
