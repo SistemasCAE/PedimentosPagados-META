@@ -50,9 +50,9 @@ var fn = {
 		}
 	},
 	enviaSesion: function(archivoSesion,usuario,password){
-		/*if(networkInfo.estaConectado() == false){
+		if(networkInfo.estaConectado() == false){
 			window.plugins.toast.show("No existe conexión a internet, revisela e intente de nuevo", 'long', 'center');
-		}else{*/
+		}else{
 			$.ajax({
 				method: "POST",
 				url: "http://enlinea.laser-oe.com.mx/AppConsultaPedimentos/"+archivoSesion,
@@ -70,7 +70,7 @@ var fn = {
 			}).fail(function(error){
 				alert("hubo error");
 			});
-		//}
+		}
 	},
 	
 	cierraSesion: function(){
@@ -104,9 +104,9 @@ var fn = {
 	},
 	
 	consultaPedimento: function(){
-	/*if(networkInfo.estaConectado() == false){
+	if(networkInfo.estaConectado() == false){
 			window.plugins.toast.show("No existe conexión a internet, revisela e intente de nuevo", 'long', 'center');
-		}else{*/
+		}else{
 		$('#resultado').html("Cargando...");
 		var empresa_rfc = window.localStorage.getItem("nombreUsuarioMETA");
 		var aduana_consulta = window.localStorage.getItem("aduanaMETA");
@@ -151,7 +151,7 @@ var fn = {
 				alert(error.responseText);
 			});
 		///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-		//}
+		}
 	},
 	
 	abrePDF : function(archivo,ruta){
@@ -164,9 +164,9 @@ var fn = {
 	},
 	
 	consultaFechaPago: function(){
-	/*if(networkInfo.estaConectado() == false){
+	if(networkInfo.estaConectado() == false){
 			window.plugins.toast.show("No existe conexión a internet, revisela e intente de nuevo", 'long', 'center');
-		}else{*/	
+		}else{	
 		$('#resultado').html("Cargando...");
 		var empresa_rfc = window.localStorage.getItem("nombreUsuarioMETA");
 		var fechaInicio= $("#fechaInicio").val();
@@ -240,13 +240,13 @@ var fn = {
 				console.log(error.responseText);
 			});
 		///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-		//}
+		}
 	},
 	
 	consultaPedimento2: function(noPedimento){
-	/*if(networkInfo.estaConectado() == false){
+	if(networkInfo.estaConectado() == false){
 			window.plugins.toast.show("No existe conexión a internet, revisela e intente de nuevo", 'long', 'center');
-		}else{*/	
+		}else{	
 		console.log(noPedimento);
 		var empresa_rfc = window.localStorage.getItem("nombreUsuarioMETA");
 		var aduana_consulta = window.localStorage.getItem("aduanaMETA");
@@ -282,7 +282,7 @@ var fn = {
 				alert(error.message);
 				alert(error.responseText);
 			});
-		//}
+		}
 		///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 	},
 	
@@ -308,9 +308,9 @@ var fn = {
 /*
  *Llamar al metodo Init en el navegador
  */
-fn.init();
+//fn.init();
 
 /*
  *Llamar deviceready para compilar
  */
-//fn.deviceready();
+fn.deviceready();

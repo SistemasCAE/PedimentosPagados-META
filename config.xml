@@ -40,13 +40,6 @@
 		</gap:config-file>
 
         <gap:plugin name="cordova-plugin-whitelist" source="npm"/>
-        <!--<gap:plugin name="com.phonegap.plugins.barcodescanner" source="npm"/>
-        <gap:plugin name="org.apache.cordova.network-information" source="npm"/>
-        <gap:plugin name="org.apache.cordova.vibration" source="npm"/>
-        <gap:plugin name="org.apache.cordova.media-capture" source="npm"/>
-        <gap:plugin name="org.apache.cordova.file-transfer" source="npm"/>
-        <gap:plugin name="cordova-plugin-barcodescanner" source="npm"/>
-        <gap:plugin name="cordova-plugin-media-capture" source="npm"/>-->
 	    <gap:plugin name="cordova-plugin-network-information" source="npm"/>
         <gap:plugin name="cordova-plugin-x-toast" source="npm" />
         <gap:plugin name="cordova-plugin-splashscreen" source="npm"/>
