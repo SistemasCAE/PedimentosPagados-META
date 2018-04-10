@@ -16,7 +16,7 @@
        	
         <preference name="SplashScreenDelay" value="5000" />
 
-        <name>Pedimentos Pagados META</name>
+        <name>CPEDI META</name>
 		<description>
             Aplicación para consultar pedimentos Pagados.
         </description>
