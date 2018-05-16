@@ -78,7 +78,7 @@ var fn = {
 	setupPush: function() {
         var push = PushNotification.init({
             "android": {
-                "senderID": "816833643158"
+                "senderID": "39822057113"
             },
             "browser": {},
             "ios": {
@@ -226,6 +226,15 @@ var fn = {
 	},
 	
 	compruebaSesion: function(){
+	if(window.localStorage.getItem("switchNotificaMETA") != null){
+			$("#switchNotificaciones").val(window.localStorage.getItem("switchNotificaMETA"));
+	}
+	if(window.localStorage.getItem("frecuenciaNotificaMETA") != null){
+		$('#slider').html('');
+		var cadena = '<input type="range" data-show-value="true" data-popup-enabled="true" min="1" max="6" value="'+window.localStorage.getItem("frecuenciaNotificaMETA")+'" id="rango">';
+		$('#slider').html(cadena);
+	}
+		
 		if(window.localStorage.getItem("nombreUsuarioMETA") != null){
 			if(window.localStorage.getItem("aduanaMETA") != null){
 				if(window.localStorage.getItem("aduanaMETA")=='puebla')
