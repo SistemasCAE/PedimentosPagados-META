@@ -116,6 +116,95 @@
 			</div>
 		</section>
 		
+		<!---------------------------------------------------------------------------------------------------------------------------------------->
+		<!----------------------------------------------------  PAGINA NOTIFICACIONES  ----------------------------------------------------------->
+		<!---------------------------------------------------------------------------------------------------------------------------------------->
+		
+		<section  id="notificaciones" data-role="page" data-content-theme="a" data-fullscreen="true">
+			<div data-role="panel" id="miPanel2">
+				<h3>Menu</h3>
+				<ul data-role="listview" id="listaPanel2">
+				</ul>
+			</div>
+			<div data-role="header" data-theme="b">
+				<div data-role="controlgroup" data-type="horizontal" class="ui-btn-left">
+					<a href="#miPanel2" data-role="button" data-icon="bars" data-inline="true" id="botonMenu1">Menu</a>
+				</div>
+				<h1>Notificaciones</h1>
+				<div data-role="controlgroup" data-type="horizontal" class="ui-btn-right">
+					<a href="" data-role="button" data-icon="delete" id="cierraSesion2">Cerrar</a>
+				</div>	
+			</div>
+			<div data-role="content">
+				<div data-role="tabs">
+					<center>
+						<div>
+							<ul data-role="listview" id="contenidoNotificaciones">
+
+							</ul>
+						</div>
+					</center>
+				</div>
+			</div>
+			<div data-role="footer" data-position="fixed" data-theme="b">
+				<h1>Copyrigth</h1>
+			</div>
+		</section>
+		
+		<!---------------------------------------------------------------------------------------------------------------------------------------->
+		<!----------------------------------------------------  PAGINA CONFIGURACION  ------------------------------------------------------------>
+		<!---------------------------------------------------------------------------------------------------------------------------------------->
+		
+		<section  id="configuracion" data-role="page" data-content-theme="a" data-fullscreen="true">
+			<div data-role="panel" id="miPanel3">
+				<h3>Menu</h3>
+				<ul data-role="listview" id="listaPanel3">
+				</ul>
+			</div>
+			<div data-role="header" data-theme="b">
+				<div data-role="controlgroup" data-type="horizontal" class="ui-btn-left">
+					<a href="#miPanel3" data-role="button" data-icon="bars" data-inline="true" id="botonMenu2">Menu</a>
+				</div>
+				<h1>Configuración</h1>
+				<div data-role="controlgroup" data-type="horizontal" class="ui-btn-right">
+					<a href="" data-role="button" data-icon="delete" id="cierraSesion3">Cerrar</a>
+				</div>
+			</div>
+			<div data-role="content">
+				<div data-role="tabs">
+					<center>
+						<div>
+							<br>
+							<h1>Notificaciones PUSH</h1>
+							<select data-role="slider" id="switchNotificaciones">
+								<option value="NO">Off</option>
+								<option value="SI">On</option>
+							</select>
+							<br>
+						</div>
+						<div>
+							<br>
+							<h1>Frecuencia en Horas</h1>
+								<div id="slider">
+									<input type="range" data-show-value="true" data-popup-enabled="true" min="1" max="6" value="2" id="rango">
+								</div>
+							<br>
+						</div>
+						<button data-icon="css/images/icons-png/carat-r-black.png" data-iconpos="right" id="botonGuardaConfig">Guardar</button>
+					</center>
+					<div id="popup1" data-role="popup">
+					</div>
+				</div>
+			</div>
+			<div data-role="footer" data-position="fixed" data-theme="b">
+				<h1>Copyrigth</h1>
+			</div>
+		</section>
+		
+		<!---------------------------------------------------------------------------------------------------------------------------------------->
+		<!---------------------------------------------------------------------------------------------------------------------------------------->
+		<!---------------------------------------------------------------------------------------------------------------------------------------->
+		
 		<script type="text/javascript" charset="utf-8" src="cordova.js"></script>
 		<script type="text/javascript" src="js/jquery-1.12.4.min.js"></script>
 		<script type="text/javascript" src="js/jquery.mobile-1.4.5.min.js"></script>
