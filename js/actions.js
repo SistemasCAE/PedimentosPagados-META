@@ -21,8 +21,8 @@ var fn = {
 	 * En esta sección vamos a asociar
 	 * todos los eventos del "Click" al HTML
 	 */
-	  if(window.localStorage.getItem("configuracion") == null){
-			window.localStorage.setItem("configuracion","");
+	  if(window.localStorage.getItem("configuracionMETA") == null){
+			window.localStorage.setItem("configuracionMETA","");
 	  }
 	  
 	  fn.Menu();
@@ -40,13 +40,13 @@ var fn = {
 	  
 	},
 	cargaNotificaciones : function(){
-		var frecuenciaNotificaciones = window.localStorage.getItem("frecuenciaNotifica");
-		if(window.localStorage.getItem("switchNotifica") != null){
+		var frecuenciaNotificaciones = window.localStorage.getItem("frecuenciaNotificaMETA");
+		if(window.localStorage.getItem("switchNotificaMETA") != null){
 			var tiempo = new Date();
 			var hora = tiempo.getHours();
 			if(hora >= '08' && hora <= '23')
 			{
-				var idDispositivo = window.localStorage.getItem("registrationID");
+				var idDispositivo = window.localStorage.getItem("registrationIDMETA");
 				////////////////////////////////////////////////////////////// Envio AJAX//////////////////////////////////////////////////////////////////
 				$.ajax({
 					type: "GET",
@@ -91,19 +91,19 @@ var fn = {
 		
         push.on('registration', function(data) {
 		
-		window.localStorage.setItem("switchNotifica", $("#switchNotificaciones").val());
-		window.localStorage.setItem("frecuenciaNotifica", $("#rango").val());
-		window.localStorage.setItem("registrationID", data.registrationId);
+		window.localStorage.setItem("switchNotificaMETA", $("#switchNotificaciones").val());
+		window.localStorage.setItem("frecuenciaNotificaMETA", $("#rango").val());
+		window.localStorage.setItem("registrationIDMETA", data.registrationId);
 		
 		jQuery.ajax({
 			url: 'http://enlinea.laser-oe.com.mx/AppConsultaPedimentos/Notificaciones/funciones.php',
 			type:'GET',
-			data:'datos='+data.registrationId+'||'+plataforma+'||'+window.localStorage.getItem("switchNotifica")+'||'+window.localStorage.getItem("frecuenciaNotifica")+'||'+window.localStorage.getItem("nombreUsuario")+'||'+window.localStorage.getItem("aduana"),
+			data:'datos='+data.registrationId+'||'+plataforma+'||'+window.localStorage.getItem("switchNotificaMETA")+'||'+window.localStorage.getItem("frecuenciaNotificaMETA")+'||'+window.localStorage.getItem("nombreUsuario")+'||'+window.localStorage.getItem("aduana"),
 			dataType:'json',
 			success:function(response){
 			  if (response.msg=='primera'){
 				alert('Se ha guardado su configuración');
-				window.localStorage.setItem("configuracion","guardada");
+				window.localStorage.setItem("configuracionMETA","guardada");
 				$('#popup1').html('');
 				$("#popup1").popup("close");
 			  }else{
@@ -210,6 +210,12 @@ var fn = {
 	cierraSesion: function(){
 		window.localStorage.removeItem("nombreUsuarioMETA");
 		window.localStorage.removeItem("aduanaMETA");
+		
+		window.localStorage.removeItem("switchNotificaMETA");
+		window.localStorage.removeItem("frecuenciaNotificaMETA");
+		window.localStorage.removeItem("configuracionMETA");
+		window.localStorage.removeItem("registrationIDMETA");
+		
 		$('#noPedimento').val('')
 		$('#fechaInicio').val('');
 		$('#fechaFin').val('');
