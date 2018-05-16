@@ -51,9 +51,19 @@
 		<!--------------------------------------------------------------------------------------------------------->
 		
 		<section id="inicio" data-role="page" data-content-theme="a" data-fullscreen="true">
+			<div data-role="panel" id="miPanel">
+				<h3>Menu</h3>
+				<ul data-role="listview" id="listaPanel">
+				</ul>
+			</div>
 			<div data-role="header" data-theme="b">
-				<a href="" data-role="button" data-icon="delete" id="cierraSesion">Cerrar</a>
+				<div data-role="controlgroup" data-type="horizontal" class="ui-btn-left">
+					<a href="#miPanel" data-role="button" data-icon="bars" data-inline="true" id="botonMenu">Menu</a>
+				</div>
 				<h1>Consulta</h1>
+				<div data-role="controlgroup" data-type="horizontal" class="ui-btn-right">
+					<a href="" data-role="button" data-icon="delete" id="cierraSesion">Cerrar</a>
+				</div>	
 			</div>
 			<div data-role="content">
 				<div data-role="tabs">

@@ -180,7 +180,7 @@ var fn = {
 			$("#aduanaNp").text('Aduana: Queretaro');
 			$("#aduanaFp").text('Aduana: Queretaro');
 			window.localStorage.setItem("aduanaMETA", aduana);
-			n.enviaSesion("compruebaSesion.php",usuario,password);
+			fn.enviaSesion("compruebaSesion.php",usuario,password);
 		}
 	},
 	enviaSesion: function(archivoSesion,usuario,password){
