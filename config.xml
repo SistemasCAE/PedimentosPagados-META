@@ -44,7 +44,12 @@
         <gap:plugin name="cordova-plugin-x-toast" source="npm" />
         <gap:plugin name="cordova-plugin-splashscreen" source="npm"/>
 		<gap:plugin name="cordova-plugin-inappbrowser" source="npm"/>
-
+		<plugin name="phonegap-plugin-push" source="npm" spec="~1.8.0">
+		  <variable name="SENDER_ID" value="816833643158" />
+		</plugin>
+		<plugin name="cordova-plugin-device" source="npm" spec="~1.1.1" />
+		<gap:plugin name="cordova-plugin-badge" version="0.7.4" source="npm" />
+		
         <access origin="*"/>
         <allow-intent href="*"/>
         <allow-navigation href="*"/>
