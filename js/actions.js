@@ -98,7 +98,7 @@ var fn = {
 		jQuery.ajax({
 			url: 'http://enlinea.laser-oe.com.mx/AppConsultaPedimentos/Notificaciones/funciones.php',
 			type:'GET',
-			data:'datos='+data.registrationId+'||'+plataforma+'||'+window.localStorage.getItem("switchNotificaMETA")+'||'+window.localStorage.getItem("frecuenciaNotificaMETA")+'||'+window.localStorage.getItem("nombreUsuario")+'||'+window.localStorage.getItem("aduana"),
+			data:'datos='+data.registrationId+'||'+plataforma+'||'+window.localStorage.getItem("switchNotificaMETA")+'||'+window.localStorage.getItem("frecuenciaNotificaMETA")+'||'+window.localStorage.getItem("nombreUsuarioMETA")+'||'+window.localStorage.getItem("aduanaMETA"),
 			dataType:'json',
 			success:function(response){
 			  if (response.msg=='primera'){
