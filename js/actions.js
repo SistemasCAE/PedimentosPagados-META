@@ -101,7 +101,7 @@ var fn = {
 			data:'datos='+data.registrationId+'||'+plataforma+'||'+window.localStorage.getItem("switchNotificaMETA")+'||'+window.localStorage.getItem("frecuenciaNotificaMETA")+'||'+window.localStorage.getItem("nombreUsuarioMETA")+'||'+window.localStorage.getItem("aduanaMETA"),
 			dataType:'json',
 			success:function(response){
-			  if (response.msg=='primera'){
+			  if(response.msg=='primera'){
 				alert('Se ha guardado su configuración');
 				window.localStorage.setItem("configuracionMETA","guardada");
 				$('#popup1').html('');
@@ -210,7 +210,6 @@ var fn = {
 	cierraSesion: function(){
 		window.localStorage.removeItem("nombreUsuarioMETA");
 		window.localStorage.removeItem("aduanaMETA");
-		
 		window.localStorage.removeItem("switchNotificaMETA");
 		window.localStorage.removeItem("frecuenciaNotificaMETA");
 		window.localStorage.removeItem("configuracionMETA");
@@ -226,15 +225,14 @@ var fn = {
 	},
 	
 	compruebaSesion: function(){
-	if(window.localStorage.getItem("switchNotificaMETA") != null){
-			$("#switchNotificaciones").val(window.localStorage.getItem("switchNotificaMETA"));
-	}
-	if(window.localStorage.getItem("frecuenciaNotificaMETA") != null){
-		$('#slider').html('');
-		var cadena = '<input type="range" data-show-value="true" data-popup-enabled="true" min="1" max="6" value="'+window.localStorage.getItem("frecuenciaNotificaMETA")+'" id="rango">';
-		$('#slider').html(cadena);
-	}
-		
+		if(window.localStorage.getItem("switchNotificaMETA") != null){
+				$("#switchNotificaciones").val(window.localStorage.getItem("switchNotificaMETA"));
+		}
+		if(window.localStorage.getItem("frecuenciaNotificaMETA") != null){
+			$('#slider').html('');
+			var cadena = '<input type="range" data-show-value="true" data-popup-enabled="true" min="1" max="6" value="'+window.localStorage.getItem("frecuenciaNotificaMETA")+'" id="rango">';
+			$('#slider').html(cadena);
+		}
 		if(window.localStorage.getItem("nombreUsuarioMETA") != null){
 			if(window.localStorage.getItem("aduanaMETA") != null){
 				if(window.localStorage.getItem("aduanaMETA")=='puebla')
@@ -324,9 +322,6 @@ var fn = {
 		var aduana_consulta = window.localStorage.getItem("aduanaMETA");
 		
 		var archivoConsulta = 'http://enlinea.laser-oe.com.mx/AppConsultaPedimentos/buscaPedimento.php';
-		
-		
-		
 		try{
 			if(fechaInicio == ""){
 				throw new Error("No ha indicado Fecha Inicio");
@@ -385,7 +380,6 @@ var fn = {
 					}
 				}
 			}).fail(function(error){
-				//alert("Error");
 				console.log(error.responseText);
 			});
 		///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
