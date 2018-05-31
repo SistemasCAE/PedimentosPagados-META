@@ -78,7 +78,10 @@ var fn = {
 	setupPush: function() {
         var push = PushNotification.init({
             "android": {
-                "senderID": "39822057113"
+                "senderID": "39822057113",
+				"sound": true,
+                "vibration": true,
+                "badge": false
             },
             "browser": {},
             "ios": {
