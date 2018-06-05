@@ -72,7 +72,7 @@ var fn = {
 	inicioRegistroCel : function(){
 		plataforma=device.platform;
         fn.setupPush();
-		$('#popup1').html('<center><img src="img/loading3.png" alt="" width="200"></center>');
+		$('#popup1').html('<center><img src="img/loading3.png" alt="" width="150"></center>');
 		$("#popup1").popup("open");
 	},
 	setupPush: function() {
